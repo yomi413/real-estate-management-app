@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import Welcome from '/Welcome';
 import Tenant from './components/Tenant';
+// import House from './components/House';
+// import TenantsList from 'TenantsList';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to my App!</h1>
-      <Tenant />
+
+      <Tenant name="Tom" lease='true' rent='1000'/>
+
+
     </div>
   );
 }
