@@ -21,6 +21,22 @@ const NavBar = () => {
           background: 'darkblue'
         }}
         >Home</NavLink>
+      <NavLink
+        to="/login"
+        exact
+        style={link}
+        activeStyle={{
+          background: 'darkblue'
+        }}
+        >Login</NavLink>
+      <NavLink
+        to="/signup"
+        exact
+        style={link}
+        activeStyle={{
+          background: 'darkblue'
+        }}
+        >Sign Up</NavLink>
     </div>
   )
 }
