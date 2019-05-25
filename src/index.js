@@ -5,6 +5,8 @@ import './index.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Welcome from './Welcome';
+import Login from './Login';
+import SignUp from './SignUp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
@@ -12,6 +14,8 @@ ReactDOM.render((
     <React.Fragment>
       <NavBar />
       <Route exact path="/" component={Welcome} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path ="/signup" component={SignUp} />
     </React.Fragment>
   </Router>),
   document.getElementById('root')
