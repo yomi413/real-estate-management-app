@@ -7,7 +7,7 @@ class SignUp extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.history.push('/')
+    this.props.history.push('/house')
   }
 
   render() {
