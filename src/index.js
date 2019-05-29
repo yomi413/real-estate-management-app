@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Welcome from './Welcome';
 import Login from './Login';
 import SignUp from './SignUp';
+import House from './components/House';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
@@ -16,6 +17,7 @@ ReactDOM.render((
       <Route exact path="/" component={Welcome} />
       <Route exact path="/login" component={Login} />
       <Route exact path ="/signup" component={SignUp} />
+      <Route exact path ="/house" component={House} />
     </React.Fragment>
   </Router>),
   document.getElementById('root')
