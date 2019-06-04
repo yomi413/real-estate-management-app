@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import tenantsInfo from './data';
 
 class TenantsList extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     const tenants = tenantsInfo.map((tenant, index) => <li key={index}>{tenant.name}</li>)
