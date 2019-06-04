@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Document } from 'react-pdf';
+// import { Document } from 'react-pdf';
 
 class BuildingDocuments extends Component {
   render() {
@@ -9,9 +9,8 @@ class BuildingDocuments extends Component {
 
     return (
 
-        // <p>The following documents comprise the mortgage documents for the building:</p>
-
       <div>
+        <h1>House Documents</h1>
         <ul>
           <li>Mortgage Documents</li>
           <li>Deed</li>
