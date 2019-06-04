@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Document } from 'react-pdf';
+import BuildingDocuments from '../BuildingDocuments';
 // import building from '../data';
 // import TenantsList from '../TenantsList';
 
@@ -23,18 +25,10 @@ class Building extends Component {
         {address}
         <h2>Building Description</h2>
           <p>{description}</p>
-        <h2>Building Documents: </h2>
-          <ul>
-            <li>Mortgage Documents</li>
-            <li>Deed</li>
-            <li>Certificate of Occupancy</li>
-          </ul>
+        <h2><Link to="/documents" >Building Documents</Link> </h2>
+
         <h2><Link to="/tenants">Tenants</Link></h2>
-          <ul>
-            <li>Apartment 1</li>
-            <li>Apartment 2</li>
-            <li>Apartment 3</li>
-          </ul>
+          
         <h2>Important Links and Information</h2>
           <ul>
             <li>Ocwen</li>
