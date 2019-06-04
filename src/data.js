@@ -1,3 +1,10 @@
+const building = {
+  address: "2942 Baisley Avenue, Bronx, NY",
+  description: "This is a 3-family house located in the Pelham Bay section of the Bronx, New York. The white brick facade gives the house a beautiful appearance.",
+  numberOfApartments: 3,
+
+}
+
 const tenantsInfo = [
   {
     name: 'John Smith',
@@ -14,7 +21,7 @@ const tenantsInfo = [
   {
     name: 'Maggie Rivera',
     apartment: 3,
-    lease: true, 
+    lease: true,
     rent: 1300
   },
   {
@@ -25,7 +32,7 @@ const tenantsInfo = [
   }
 ]
 
-const houseInfo = [
+const buildingInfo = [
   {
     apartment: 1,
     bedrooms: 1,
@@ -55,3 +62,5 @@ const houseInfo = [
     features: ['washer', 'dryer', 'dishwasher']
   }
 ]
+
+export default tenantsInfo;
