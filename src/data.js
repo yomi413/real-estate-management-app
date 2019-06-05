@@ -9,25 +9,29 @@ const tenantsInfo = [
   {
     name: 'John Smith',
     apartment: 1,
-    lease: true,
+    leaseCommencement: "May 1, 2019",
+    leaseExpiration: "April 30, 2020",
     rent: 1000
   },
   {
     name: 'Michael Jackson',
     apartment: 2,
-    lease: true,
+    leaseCommencement: "July 1, 2018",
+    leaseExpiration: "June 30, 2019",
     rent: 1300
   },
   {
     name: 'Maggie Rivera',
     apartment: 3,
-    lease: true,
+    leaseCommencement: "December 15, 2015",
+    leaseExpiration: "December 14, 2020",
     rent: 1300
   },
   {
     name: 'Chloe Sullivan',
     apartment: 4,
-    lease: true,
+    leaseCommencement: "September 1, 2017",
+    leaseExpiration: "August 30, 2019",
     rent: 1500
   }
 ]
