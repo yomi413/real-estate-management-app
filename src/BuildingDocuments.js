@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from './App';
 // import { Document } from 'react-pdf';
 
 class BuildingDocuments extends Component {
@@ -13,7 +14,7 @@ class BuildingDocuments extends Component {
         <h1>House Documents</h1>
         <ul>
           <li>Mortgage Documents</li>
-          <li>Deed</li>
+          <li><App /></li>
           <li>Certificate of Occupancy</li>
         </ul>
       </div>
