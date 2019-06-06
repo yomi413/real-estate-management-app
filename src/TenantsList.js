@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import tenantsInfo from './data';
+import buildingInfo from './data';
 
 class TenantsList extends Component {
 
   render() {
-    const tenants = tenantsInfo.map((tenant, index) =>
+    const tenants = buildingInfo.tenants.map(tenant =>
       <tr>
         <td>{tenant.apartment}</td>
         <td>{tenant.name}</td>
@@ -12,7 +12,6 @@ class TenantsList extends Component {
         <td>{tenant.leaseCommencement}</td>
         <td>{tenant.leaseExpiration}</td>
       </tr>)
-    // const tenants = tenantsInfo.map((tenant, index) => <li key={index}>{tenant.name}</li>)
 
     return (
       <div>
