@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class Welcome extends Component {
   render() {
+    const url = window.location.pathname
+
     return (
       <div>
         <h1>Our House App</h1>
