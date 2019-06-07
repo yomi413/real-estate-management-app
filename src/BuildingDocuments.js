@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import App from './App';
+import BuildingContainer from './containers/BuildingContainer';
 // import { Document } from 'react-pdf';
 
 class BuildingDocuments extends Component {
@@ -17,6 +18,7 @@ class BuildingDocuments extends Component {
           <li><App /></li>
           <li>Certificate of Occupancy</li>
         </ul>
+      <BuildingContainer />
       </div>
     )
   }
