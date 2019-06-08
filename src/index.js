@@ -10,8 +10,10 @@ import Welcome from './Welcome';
 import Login from './Login';
 import SignUp from './SignUp';
 import Building from './components/Building';
+import Buildings from './components/Buildings';
 import BuildingDocuments from './BuildingDocuments';
 import TenantsList from './TenantsList';
+import BuildingContainer from './containers/BuildingContainer';
 // import TenantsList from './TenantsList';
 import * as serviceWorker from './serviceWorker';
 
@@ -37,6 +39,12 @@ ReactDOM.render((
         <Route exact path="/building" component={Building} />
         <Route exact path="/documents" component={BuildingDocuments} />
         <Route exact path="/tenants" component={TenantsList} />
+        <Route exact path="/buildings" component={Buildings} />
+        <Route exact path="/building/new"
+          render={(props) => {
+            return <BuildingContainer />
+          }}
+        />
         <Route exact path ="/building/:id"
            render={(props) => {
              return <Building buildingId={props.match.params.id}  />
