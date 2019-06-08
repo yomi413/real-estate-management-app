@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import BuildingContainer from '../containers/BuildingContainer';
+import buildingInfo from '../data';
 // import { Document } from 'react-pdf';
 // import BuildingDocuments from '../BuildingDocuments';
 // import building from '../data';
@@ -14,17 +16,18 @@ class Building extends Component {
   }
 
   render () {
-    const address = "2942 Baisley Avenue, Bronx, New York"
-    const description = "This is a 3-family house located in the Pelham Bay section of the Bronx, New York. The white brick facade gives the house a beautiful appearance."
-    const image = "https://i.imgur.com/jJyv31d.png"
+    // const address = "2942 Baisley Avenue, Bronx, New York"
+    // const description = "This is a 3-family house located in the Pelham Bay section of the Bronx, New York. The white brick facade gives the house a beautiful appearance."
+    // const image = "https://i.imgur.com/jJyv31d.png"
 
     return (
       <div>
-        <center><img src={image} alt="Our House" /></center>
+
+        <center><img src={buildingInfo.image} alt="Our House" /></center>
         <h2>Address</h2>
-        {address}
+        {buildingInfo.address}
         <h2>Building Description</h2>
-          <p>{description}</p>
+          <p>{buildingInfo.description}</p>
         <h2><Link to="/documents" >Building Documents</Link> </h2>
 
         <h2><Link to="/tenants">Tenants</Link></h2>
