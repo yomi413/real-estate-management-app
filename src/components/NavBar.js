@@ -12,6 +12,7 @@ const link = {
 }
 
 const NavBar = () => {
+  
   return (
     <div className="navbar">
       <NavLink
