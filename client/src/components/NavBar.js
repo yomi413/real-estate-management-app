@@ -12,7 +12,7 @@ const link = {
 }
 
 const NavBar = () => {
-  
+
   return (
     <div className="navbar">
       <NavLink
@@ -47,6 +47,14 @@ const NavBar = () => {
           background: 'darkblue'
         }}
         >Building Info</NavLink>
+      <NavLink
+        to="/logout"
+        exact
+        style={link}
+        activeStyle={{
+          background: 'darkblue'
+        }}
+        >Logout</NavLink>
     </div>
   )
 }
