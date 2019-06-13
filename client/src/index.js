@@ -9,12 +9,12 @@ import NavBar from './components/NavBar';
 import Welcome from './Welcome';
 import Login from './Login';
 import SignUp from './SignUp';
+import Logout from './Logout';
 import Building from './components/Building';
 import Buildings from './components/Buildings';
 import BuildingDocuments from './BuildingDocuments';
 import TenantsList from './TenantsList';
 import BuildingContainer from './containers/BuildingContainer';
-// import TenantsList from './TenantsList';
 import * as serviceWorker from './serviceWorker';
 
 const reducer = (s) => s
@@ -31,11 +31,13 @@ const store = createStore(
 ReactDOM.render((
   <Provider store={store}>
     <Router>
-
+        <NavBar />
         <Switch>
+
           <Route exact path="/" component={Welcome} />
           <Route exact path="/login" component={Login} />
           <Route exact path ="/signup" component={SignUp} />
+          <Route exact path="/logout" component={Logout} />
           <Route exact path="/building" component={Building} />
           <Route exact path="/documents" component={BuildingDocuments} />
           <Route exact path="/tenants" component={TenantsList} />
@@ -51,7 +53,7 @@ ReactDOM.render((
              }}
           />
         </Switch>
-      
+
     </Router>
   </Provider>),
   document.getElementById('root')
