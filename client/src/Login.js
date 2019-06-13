@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class Login extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    loginErrors: ''
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3001/users', {
+    fetch('http://localhost:3001/session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,6 +20,9 @@ class Login extends Component {
         password: this.state.password
       })
     })
+    .then(response => {
+      console.log(response)
+    })
     .then(() => {
       this.props.history.push('/')
     })
@@ -28,6 +32,10 @@ class Login extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
