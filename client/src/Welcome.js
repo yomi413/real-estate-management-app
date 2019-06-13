@@ -7,7 +7,6 @@ class Welcome extends Component {
 
     return (
       <div>
-        <NavBar />
         <center>
 
           <h1>Escano Real Estate Services</h1>
