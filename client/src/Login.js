@@ -24,7 +24,7 @@ class Login extends Component {
       console.log(response)
     })
     .then(() => {
-      this.props.history.push('/')
+      this.props.history.push('/buildings')
     })
   }
 
@@ -32,10 +32,6 @@ class Login extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
