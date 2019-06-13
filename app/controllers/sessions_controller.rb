@@ -6,31 +6,32 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_or_create_by(uid: auth['uid']) do |user|
-      user.name = auth['info']['name']
-      user.email = auth['info']['email']
-      user.image = auth['info']['image']
-    end
+    user = User.find_or_create_by(user_params)
 
-    session[:user_id] = @user.id
+    session[:user_id] = user.id
 
-    render 'welcome/home'
+    render json: {success: true}, status: 200
   end
 
   def login
-    @user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email])
 
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      render json: {success: true}, status: 200
     else
-      flash.now[:error] = "Email and/or password not valid. Please try again."
-      render 'new'
+      render json: {errors: "Email and/or password not valid. Please try again."}, status: 422
     end
   end
 
   def destroy
     session.delete(:user_id)
     redirect_to root_path
+  end
+
+  private
+
+  def user_params
+    params.permit(:email, :password)
   end
 end
