@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to root_path
+    render json: {success: true}, status: 200
   end
 
   private
