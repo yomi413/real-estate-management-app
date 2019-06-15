@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :buildings
   resources :users
 
   get '/session', to: 'sessions#new'
