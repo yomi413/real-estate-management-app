@@ -38,3 +38,12 @@ button {
   margin: 10px;
   padding: 30px 20px;
 }
+
+.skyscrapers {
+  object-fit: contain;
+}
+
+.homeHeader {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-style: oblique;
+}
