@@ -20,11 +20,8 @@ class Login extends Component {
         password: this.state.password
       })
     })
-    .then(response => {
-      console.log(response)
-    })
     .then(() => {
-      this.props.history.push('/buildings')
+      this.props.history.push('/building/new')
     })
   }
 
