@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const link = {
@@ -11,52 +11,102 @@ const link = {
   border: '1px solid #4CAF50'
 }
 
-const NavBar = () => {
+class NavBar extends Component {
+  render() {
+    const homeButton = <NavLink
+      to="/"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >Home</NavLink>
 
-  return (
-    <div className="navbar">
-      <NavLink
-        to="/"
-        exact
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-        >Home</NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-        >Login</NavLink>
-      <NavLink
-        to="/signup"
-        exact
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-        >Sign Up</NavLink>
-      <NavLink
-        to="/building"
-        exact
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-        >Building Info</NavLink>
-      <NavLink
-        to="/logout"
-        exact
-        style={link}
-        activeStyle={{
-          background: 'darkblue'
-        }}
-        >Logout</NavLink>
-    </div>
-  )
+    const loginButton = <NavLink
+      to="/login"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >Login</NavLink>
+
+    const signupButton = <NavLink
+      to="/signup"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >Sign Up</NavLink>
+
+    const logoutButton = <NavLink
+      to="/logout"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >Logout</NavLink>
+
+    const url = window.location.pathname
+
+    if (url === '/') {
+      return (
+        <div className="navbar">
+          {loginButton}
+          {signupButton}
+        </div>
+      )
+    } 
+  }
 }
+
+// const NavBar = () => {
+//   return (
+//     <div className="navbar">
+//       <NavLink
+//         to="/"
+//         exact
+//         style={link}
+//         activeStyle={{
+//           background: 'darkblue'
+//         }}
+//         >Home</NavLink>
+      // <NavLink
+      //   to="/login"
+      //   exact
+      //   style={link}
+      //   activeStyle={{
+      //     background: 'darkblue'
+      //   }}
+      //   >Login</NavLink>
+      // <NavLink
+      //   to="/signup"
+      //   exact
+      //   style={link}
+      //   activeStyle={{
+      //     background: 'darkblue'
+      //   }}
+      //   >Sign Up</NavLink>
+//       <NavLink
+//         to="/building"
+//         exact
+//         style={link}
+//         activeStyle={{
+//           background: 'darkblue'
+//         }}
+//         >Building Info</NavLink>
+    //   <NavLink
+    //     to="/logout"
+    //     exact
+    //     style={link}
+    //     activeStyle={{
+    //       background: 'darkblue'
+    //     }}
+    //     >Logout</NavLink>
+    // </div>
+//   )
+// }
 
 export default NavBar;
