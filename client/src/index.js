@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 // import App from './App';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import Welcome from './Welcome';
 import Login from './Login';
 import SignUp from './SignUp';
@@ -31,7 +31,7 @@ const store = createStore(
 ReactDOM.render((
   <Provider store={store}>
     <Router>
-        <NavBar />
+
         <Switch>
 
           <Route exact path="/" component={Welcome} />
