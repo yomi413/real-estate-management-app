@@ -4,11 +4,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import './index.css';
 // import App from './App';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 // import NavBar from './components/NavBar';
 import Welcome from './Welcome';
 import Login from './Login';
 import SignUp from './SignUp';
+import UserWelcome from './UserWelcome';
 import Logout from './Logout';
 import Building from './components/Building';
 import Buildings from './components/Buildings';
@@ -35,8 +36,10 @@ ReactDOM.render((
         <Switch>
 
           <Route exact path="/" component={Welcome} />
+          <Route path='/authentication/logout'component={Logout} />
           <Route exact path="/login" component={Login} />
           <Route exact path ="/signup" component={SignUp} />
+          <Route exact path="/user-welcome" component={UserWelcome} />
           <Route exact path="/logout" component={Logout} />
           <Route exact path="/building" component={Building} />
           <Route exact path="/documents" component={BuildingDocuments} />
