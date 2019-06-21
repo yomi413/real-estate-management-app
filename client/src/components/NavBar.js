@@ -49,6 +49,24 @@ class NavBar extends Component {
       }}
       >Logout</NavLink>
 
+    const buildingsButton = <NavLink
+      to="/buildings"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >Existing Buildings</NavLink>
+
+    const newBuildingButton = <NavLink
+      to="/building/new"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+      >New Building</NavLink>
+
     const url = window.location.pathname
 
     if (url === '/') {
@@ -58,7 +76,16 @@ class NavBar extends Component {
           {signupButton}
         </div>
       )
-    } 
+    } else if (url === '/user-welcome') {
+      return (
+        <div className="navbar">
+          {homeButton}
+          {logoutButton}
+          {buildingsButton}
+          {newBuildingButton}
+        </div>
+      )
+    }
   }
 }
 
