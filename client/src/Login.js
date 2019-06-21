@@ -21,7 +21,7 @@ class Login extends Component {
       })
     })
     .then(() => {
-      this.props.history.push('/building/new')
+      this.props.history.push('/user-welcome')
     })
   }
 
