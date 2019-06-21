@@ -8,7 +8,7 @@ class SignUp extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3001/users', {
+    fetch('http://localhost:3001/session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ class SignUp extends Component {
       })
     })
     .then(() => {
-      this.props.history.push('/buildings')
+      this.props.history.push('/user-welcome')
     })
   }
 
