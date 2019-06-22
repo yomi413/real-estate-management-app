@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class SignUp extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    signupErrors: ''
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3001/session', {
+    fetch('http://localhost:3001/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,8 +20,14 @@ class SignUp extends Component {
         password: this.state.password
       })
     })
-    .then(() => {
-      this.props.history.push('/user-welcome')
+    .then((response) => {
+      return Promise.all([response.ok, response.json()]);
+    }).then(([ok, json]) => {
+      if (ok) {
+        this.props.history.push('/user-welcome')
+      } else {
+        this.setState({ signupErrors: json['errors'] })
+      }
     })
   }
 
@@ -32,20 +39,23 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Sign Up</h1>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="text" name="email" placeholder="Email" onChange={this.handleChange}/>
-        </div>
+      <div>
+        <div style={{color: 'red'}}>{this.state.signupErrors}</div>
+        <form onSubmit={this.handleSubmit}>
+          <h1>Sign Up</h1>
+          <div>
+            <label htmlFor="email">Email: </label>
+            <input type="text" name="email" placeholder="Email" onChange={this.handleChange}/>
+          </div>
 
-        <div>
-          <label htmlFor="password">Password: </label>
-          <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
-        </div>
+          <div>
+            <label htmlFor="password">Password: </label>
+            <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
+          </div>
 
-        <input type="submit" value="Sign Up" />
-      </form>
+          <input type="submit" value="Sign Up" />
+        </form>
+      </div>
     )
   }
 }
