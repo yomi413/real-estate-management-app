@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    # binding.pry
+    
     if user.save && !user.email.empty? && !user.password.empty?
       render json: {success: true}, status: 200
     else
