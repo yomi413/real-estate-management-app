@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
+
     render json: {success: true}, status: 200
   end
 
