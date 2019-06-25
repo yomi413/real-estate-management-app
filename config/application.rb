@@ -22,11 +22,11 @@ module BuildingApi
     # Use the responders controller from the responders gem
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :options]
+        origins 'localhost:3000'
+        resource '*', headers: :any, methods: [:get, :post, :options], credentials: true
       end
     end
-    
+
     config.app_generators.scaffold_controller :responders_controller
 
     # Initialize configuration defaults for originally generated Rails version.
