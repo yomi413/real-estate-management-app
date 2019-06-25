@@ -79,10 +79,9 @@ class NavBar extends Component {
     } else if (url === '/user-welcome') {
       return (
         <div className="navbar">
-          {homeButton}
-          {logoutButton}
           {buildingsButton}
           {newBuildingButton}
+          {logoutButton}
         </div>
       )
     }
