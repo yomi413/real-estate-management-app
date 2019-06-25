@@ -10,6 +10,7 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     fetch('http://localhost:3001/session', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
