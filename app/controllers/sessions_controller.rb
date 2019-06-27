@@ -11,18 +11,17 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
-
     render json: {success: true}, status: 200
   end
 
   def login
     user = User.find_by(email: params[:email])
-    
+
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       render json: {success: true}, status: 200
     else
-      render json: {errors: "Email and/or password not valid. Please try again."}, status: 422
+      render json: {errors: "Email and/or password not valid. Please try again or create a new account."}, status: 422
     end
   end
 
