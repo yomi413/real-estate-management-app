@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AccountForm from './AccountForm';
 
 class Login extends Component {
   state = {
@@ -40,24 +41,12 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <div style={{color: 'red'}}>{this.state.error}</div>
-          <form onSubmit={this.handleSubmit}>
-            <h1>Login</h1>
-            <div>
-              <label htmlFor="email">Email: </label>
-              <input type="text" name="email" placeholder="Email" onChange={this.handleChange}/>
-            </div>
-            <br></br>
-            <div>
-            <label htmlFor="password">Password: </label>
-              <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
-            </div>
-            <br></br>
-            <input type="submit" value="Login" />
-          </form>
-
-      </div>
+      <AccountForm
+        heading="Login"
+        error={this.state.error}
+        onSubmit={this.handleSubmit}
+        onChange={this.handleChange}
+      />
     )
   }
 }
