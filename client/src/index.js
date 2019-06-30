@@ -45,11 +45,8 @@ ReactDOM.render((
           <Route exact path="/documents" component={BuildingDocuments} />
           <Route exact path="/tenants" component={TenantsList} />
           <Route exact path="/buildings" component={Buildings} />
-          <Route exact path="/building/new"
-            render={(props) => {
-              return <BuildingContainer />
-            }}
-          />
+          <Route exact path="/building/new" component={BuildingContainer} />
+            
           <Route exact path ="/building/:id"
              render={(props) => {
                return <Building buildingId={props.match.params.id}  />
