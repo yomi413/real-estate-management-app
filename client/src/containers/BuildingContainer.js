@@ -22,7 +22,9 @@ class BuildingContainer extends Component {
         numberOfApartments: this.state.numberOfApartments
       })
     })
-    .then(response => response.json())
+    .then(() => {
+      this.props.history.push('/buildings')
+    })
   }
 
   handleChange = (event) => {
