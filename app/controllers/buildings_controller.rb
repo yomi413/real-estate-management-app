@@ -3,18 +3,13 @@ require 'pry'
 class BuildingsController < ApplicationController
   def index
     buildings = Building.all
+    render json: {buildings: buildings}
   end
 
-  # def new
-  #   building = Building.new
-  #
-  #   render json: {success: true}, status: 200
-  # end
-
   def create
-    building = Building.create(building_params)
-    binding.pry
-    if building.save
+    building = Building.new(building_params)
+
+    if building.save && !building.address.empty? && !building.description.empty? && !building.numberOfApartments.empty?
       render json: {success: true}, status: 200
     else
       render json: {errors: "Invalid building entry. Please try again."}, status: 422
@@ -29,6 +24,6 @@ class BuildingsController < ApplicationController
   private
 
   def building_params
-    params.require(:building).permit(:address, :description, :numberOfApartments)
+    params.permit(:address, :description, :numberOfApartments)
   end
 end
