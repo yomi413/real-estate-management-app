@@ -35,29 +35,30 @@ class BuildingContainer extends Component {
 
   render() {
     return (
+      <div><NavBar />
+        <form onSubmit={this.handleSubmit}>
+          <h1>New Building</h1>
+          <div>
+            <label htmlFor="address">Address: </label>
+            <input type="text" name="address" placeholder="Address" onChange={this.handleChange} />
+          </div>
+          <br></br>
 
-      <form onSubmit={this.handleSubmit}>
-        <h1>New Building</h1>
-        <div>
-          <label htmlFor="address">Address: </label>
-          <input type="text" name="address" placeholder="Address" onChange={this.handleChange} />
-        </div>
-        <br></br>
+          <div>
+            <label htmlFor="description">Description: </label>
+            <input type="text" name="description" placeholder="Description" onChange={this.handleChange} />
+          </div>
+          <br></br>
 
-        <div>
-          <label htmlFor="description">Description: </label>
-          <input type="text" name="description" placeholder="Description" onChange={this.handleChange} />
-        </div>
-        <br></br>
+          <div>
+            <label htmlFor="numberOfApartments">Number of Apartments: </label>
+            <input type="number" name="numberOfApartments" placeholder="# of Apartments" onChange={this.handleChange} />
+          </div>
+          <br></br>
 
-        <div>
-          <label htmlFor="numberOfApartments">Number of Apartments: </label>
-          <input type="number" name="numberOfApartments" placeholder="# of Apartments" onChange={this.handleChange} />
-        </div>
-        <br></br>
-
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar from './NavBar';
 
 class Buildings extends Component {
   state = {
@@ -26,7 +27,9 @@ class Buildings extends Component {
     })
 
     return (
+      
       <div>
+        <NavBar />
         <h1>Buildings</h1>
         {buildingsList}
       </div>
