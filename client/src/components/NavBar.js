@@ -84,6 +84,21 @@ class NavBar extends Component {
           {logoutButton}
         </div>
       )
+    } else if (url === '/buildings') {
+      return (
+        <div className="navbar">
+          {homeButton}
+          {newBuildingButton}
+          {logoutButton}
+        </div>
+      )
+    } else if (url === '/building/new') {
+      return (
+        <div className="navbar">
+          {homeButton}
+          {buildingsButton}
+        </div>
+      )
     }
   }
 }
