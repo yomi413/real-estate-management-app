@@ -3,35 +3,19 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class Logout extends Component {
-  handleLogout = (event) => {
-    event.preventDefault();
-    fetch('http://localhost:3001/session', {
-      credentials: 'include',
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then((response) => {
-      return Promise.all([response.ok, response.json()]);
-    }).then(([ok, json]) => {
-      if (ok) {
-        this.props.history.push('/user-welcome')
-      } else {
-        this.setState({ error: json['errors'] })
-      }
-    })
+  handleLogout() {
+    localStorage.clear();
+    window.location.href = '/';
   }
 
   render() {
     return (
-
-      <button type="button" onClick={this.handleLogout}>Logout Button</button>
-
+      <div>
+        <h3>Are you sure you want to log out?</h3>
+        <button type="button" onClick={this.handleLogout}>Logout Button</button>
+      </div>
     )
   }
-
 }
 
 export default withRouter(Logout);
