@@ -7,19 +7,21 @@ class SessionsController < ApplicationController
   end
 
   def create
+    session = Session.create(uid: SecureRandom.uuid)
     user = User.find_or_create_by(user_params)
 
-    session[:user_id] = user.id
+    user.sessions = [session]
 
-    render json: {success: true}, status: 200
+    render json: {sessionUid: session.uid}, status: 201
   end
 
   def login
+    session = Session.create(uid: SecureRandom.uuid)
     user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      render json: {success: true}, status: 200
+      user.sessions = [session]
+      render json: {sessionUid: session.uid}, status: 201
     else
       render json: {errors: "Email and/or password not valid. Please try again or create a new account."}, status: 422
     end
