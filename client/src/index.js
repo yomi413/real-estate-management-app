@@ -1,27 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import "./index.css";
 // import App from './App';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 // import NavBar from './components/NavBar';
-import Welcome from './Welcome';
-import Login from './Login';
-import SignUp from './SignUp';
-import UserWelcome from './UserWelcome';
-import Logout from './Logout';
-import Building from './components/Building';
-import Buildings from './components/Buildings';
-import BuildingDocuments from './BuildingDocuments';
-import TenantsList from './TenantsList';
-import BuildingContainer from './containers/BuildingContainer';
-import * as serviceWorker from './serviceWorker';
+import Welcome from "./Welcome";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import UserWelcome from "./UserWelcome";
+import Logout from "./Logout";
+import Building from "./components/Building";
+import Buildings from "./components/Buildings";
+import BuildingDocuments from "./BuildingDocuments";
+import TenantsList from "./TenantsList";
+import BuildingContainer from "./containers/BuildingContainer";
+import * as serviceWorker from "./serviceWorker";
 
-const reducer = (s) => s
+const reducer = s => s;
 const initialState = {
   address: "2942 Baisley Avenue, Bronx, NY"
-}
+};
 
 const store = createStore(
   reducer,
@@ -29,34 +34,32 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store}>
     <Router>
+      <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/user-welcome" component={UserWelcome} />
+        <Route exact path="/logout" component={Logout} />
+        <Route exact path="/building" component={Building} />
+        <Route exact path="/documents" component={BuildingDocuments} />
+        <Route exact path="/tenants" component={TenantsList} />
+        <Route exact path="/buildings" component={Buildings} />
+        <Route exact path="/building/new" component={BuildingContainer} />
 
-        <Switch>
-
-          <Route exact path="/" component={Welcome} />
-          <Route path='/authentication/logout'component={Logout} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path ="/signup" component={SignUp} />
-          <Route exact path="/user-welcome" component={UserWelcome} />
-          <Route exact path="/logout" component={Logout} />
-          <Route exact path="/building" component={Building} />
-          <Route exact path="/documents" component={BuildingDocuments} />
-          <Route exact path="/tenants" component={TenantsList} />
-          <Route exact path="/buildings" component={Buildings} />
-          <Route exact path="/building/new" component={BuildingContainer} />
-            
-          <Route exact path ="/building/:id"
-             render={(props) => {
-               return <Building buildingId={props.match.params.id}  />
-             }}
-          />
-        </Switch>
-
+        <Route
+          exact
+          path="/building/:id"
+          render={props => {
+            return <Building buildingId={props.match.params.id} />;
+          }}
+        />
+      </Switch>
     </Router>
-  </Provider>),
-  document.getElementById('root')
+  </Provider>,
+  document.getElementById("root")
 );
 
 // ReactDOM.render(
