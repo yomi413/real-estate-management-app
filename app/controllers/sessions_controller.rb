@@ -16,10 +16,10 @@ class SessionsController < ApplicationController
   end
 
   def login
-    session = Session.create(uid: SecureRandom.uuid)
     user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
+      session = Session.create(uid: SecureRandom.uuid)
       user.sessions = [session]
       render json: {sessionUid: session.uid}, status: 201
     else
@@ -28,7 +28,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
+    session = Session.find_by(uid: params[:uid])
+    session.delete()
     render json: {success: true}, status: 200
   end
 
