@@ -6,11 +6,16 @@ class BuildingsController < ApplicationController
     render json: {buildings: buildings}
   end
 
-  def create
-    building = Building.new(building_params)
+  def new
+    building = Building.new
+  end
 
-    if building.save && !building.address.empty? && !building.description.empty? && !building.numberOfApartments.empty?
-      render json: {success: true}, status: 200
+  def create
+    session = Session.find_by(uid: params[:uid])
+    building = session.user.buildings.new(building_params)
+
+    if building.save
+      render json: {success: true}, status: 201
     else
       render json: {errors: "Invalid building entry. Please try again."}, status: 422
     end
