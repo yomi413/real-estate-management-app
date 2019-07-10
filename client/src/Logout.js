@@ -21,7 +21,7 @@ class Logout extends Component {
       .then(([ok, json]) => {
         if (ok) {
           localStorage.clear(json.sessionUid);
-          // window.location.href = "/";
+          this.props.history.push("/");
         } else {
           this.setState({ error: json["errors"] });
         }
