@@ -78,6 +78,19 @@ class NavBar extends Component {
       </NavLink>
     );
 
+    const buildingButton = (
+      <NavLink
+        to="/building"
+        exact
+        style={link}
+        activeStyle={{
+          background: "darkblue"
+        }}
+      >
+        Building Info
+      </NavLink>
+    );
+
     const newBuildingButton = (
       <NavLink
         to="/building/new"
@@ -114,6 +127,7 @@ class NavBar extends Component {
           {homeButton}
           {newBuildingButton}
           {logoutButton}
+          {buildingButton}
         </div>
       );
     } else if (url === "/building/new") {
@@ -125,6 +139,13 @@ class NavBar extends Component {
       );
     } else if (url === "/login" || url === "/signup") {
       return <div className="navbar">{homeButton}</div>;
+    } else if (url === "/building") {
+      return (
+        <div className="navbar">
+          {homeButton}
+          {buildingsButton}
+        </div>
+      );
     }
   }
 }
