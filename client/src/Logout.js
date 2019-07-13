@@ -22,8 +22,6 @@ class Logout extends Component {
         if (ok) {
           localStorage.clear(json.sessionUid);
           this.props.history.push("/");
-        } else {
-          this.setState({ error: json["errors"] });
         }
       });
   };
