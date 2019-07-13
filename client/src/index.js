@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "./reducers/rootReducer";
 import { Provider } from "react-redux";
 import "./index.css";
 // import App from './App';
@@ -21,18 +23,28 @@ import Buildings from "./components/Buildings";
 import BuildingDocuments from "./BuildingDocuments";
 import TenantsList from "./TenantsList";
 import BuildingContainer from "./containers/BuildingContainer";
+
+import "bootstrap/dist/css/bootstrap.css";
+
 import * as serviceWorker from "./serviceWorker";
 
-const reducer = s => s;
 const initialState = {
-  address: "2942 Baisley Avenue, Bronx, NY"
+  buildings: []
 };
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
-  reducer,
+  rootReducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(applyMiddleware(thunk))
 );
+
+// createStore(
+//   reducer,
+//   initialState,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
 
 ReactDOM.render(
   <Provider store={store}>
