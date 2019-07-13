@@ -23,7 +23,7 @@ class BuildingContainer extends Component {
         numberOfApartments: this.state.numberOfApartments
       })
     }).then(() => {
-      this.props.history.push("/buildings");
+      this.props.history.push("/user-welcome");
     });
   };
 
