@@ -2,7 +2,9 @@ require 'pry'
 
 class BuildingsController < ApplicationController
   def index
-    buildings = Building.all
+    session = Session.find_by(uid: params[:uid])
+    buildings = session.user.buildings.all
+
     render json: {buildings: buildings}
   end
 
@@ -22,8 +24,9 @@ class BuildingsController < ApplicationController
   end
 
   def show
-    building = Building.find_by(id: params[:id])
-    render json: building
+    session = Session.find_by(uid: params[:uid])
+    building = session.user.buildings.find_by(id: params[:id])
+    render json: {building: building} 
   end
 
   private
