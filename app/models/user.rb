@@ -10,4 +10,7 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   # accepts_nested_attributes_for :building 
+  def current_user
+    self.find_by(id: session[:user_id])
+  end
 end
