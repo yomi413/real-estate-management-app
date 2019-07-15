@@ -32,6 +32,17 @@ class BuildingsController < ApplicationController
   private
 
   def building_params
-    params.permit(:address, :description, :numberOfApartments)
+    params.permit(
+      :address, 
+      :description, 
+      :numberOfApartments, 
+      document_attributes: [
+        :deed, 
+        :mortgage_1, 
+        :mortgage_2, 
+        :satisfaction_of_mortgage_1, 
+        :satisfaction_of_mortgage_2, 
+        :certificate_of_occupancy
+      ])
   end
 end
