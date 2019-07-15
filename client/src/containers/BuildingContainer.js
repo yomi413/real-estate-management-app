@@ -5,7 +5,13 @@ class BuildingContainer extends Component {
   state = {
     address: "",
     description: "",
-    numberOfApartments: ""
+    numberOfApartments: "",
+    deed: "",
+    mortgage_1: "",
+    mortgage_2: "",
+    satisfaction_of_mortgage_1: "",
+    satisfaction_of_mortgage_2: "",
+    certificate_of_occupancy: ""
   };
 
   handleSubmit = event => {
@@ -20,7 +26,15 @@ class BuildingContainer extends Component {
         uid: localStorage["json.sessionUid"],
         address: this.state.address,
         description: this.state.description,
-        numberOfApartments: this.state.numberOfApartments
+        numberOfApartments: this.state.numberOfApartments,
+        document_attributes: {
+          deed: this.state.deed,
+          mortgage_1: this.state.mortgage_1,
+          mortgage_2: this.state.mortgage_2,
+          satisfaction_of_mortgage: this.state.satisfaction_of_mortgage_1,
+          satisfaction_of_mortgage_2: this.state.satisfaction_of_mortgage_2,
+          certificate_of_occupancy: this.state.certificate_of_occupancy
+        }
       })
     }).then(() => {
       this.props.history.push("/user-welcome");
@@ -67,6 +81,39 @@ class BuildingContainer extends Component {
               type="number"
               name="numberOfApartments"
               placeholder="# of Apartments"
+              onChange={this.handleChange}
+            />
+          </div>
+          <br />
+
+          <div>
+            <label htmlFor="deed">Deed: </label>
+            <input
+              type="text"
+              name="deed"
+              placeholder="Deed"
+              onChange={this.handleChange}
+            />
+          </div>
+          <br />
+
+          <div>
+            <label htmlFor="mortgage_1">Mortgage: </label>
+            <input
+              type="text"
+              name="mortgage_1"
+              placeholder="Mortgage"
+              onChange={this.handleChange}
+            />
+          </div>
+          <br />
+
+          <div>
+            <label htmlFor="mortgage_2">Mortgage: </label>
+            <input
+              type="text"
+              name="mortgage_2"
+              placeholder="Mortgage (optional)"
               onChange={this.handleChange}
             />
           </div>
