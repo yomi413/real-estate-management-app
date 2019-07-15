@@ -35,13 +35,13 @@ class Building extends Component {
           }
         });
       });
-    // .catch(error => {});
   }
 
   render() {
     return (
       <div>
         <NavBar />
+
         <h2>Address</h2>
         {this.state.building.address}
 
@@ -51,7 +51,12 @@ class Building extends Component {
         <h2>Number of Apartments</h2>
         {this.state.building.numberOfApartments}
 
-        <BuildingDocuments />
+        <BuildingDocuments buildingId={this.props.buildingId} />
+
+        <h2>Important Contacts and Links</h2>
+        <a href="https://www1.nyc.gov/site/finance/index.page">
+          NYC Department of Finance
+        </a>
         {/* <center>
           <img src={buildingInfo.image} alt="Our House" />
         </center>
@@ -72,33 +77,32 @@ class Building extends Component {
           <li>NYC Department of Finance</li>
           <li>NYC Department of Buildings</li>
         </ul> */}
-
         <FooterComponent />
       </div>
     );
   }
 }
 
-// const mapStateToProps = ({ address }) => {
-//   return { address };
-// };
+const mapStateToProps = ({ address }) => {
+  return { address };
+};
 
 const fetchBuilding = id => ({
   type: "FETCH_BUILDING",
   id
 });
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchBuilding: id => {
-//       dispatch(fetchBuilding(id));
-//     }
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchBuilding: id => {
+      dispatch(fetchBuilding(id));
+    }
+  };
+};
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Building);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Building);
 
-export default Building;
+// export default Building;
