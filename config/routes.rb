@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :documents
-  resources :buildings
+  resources :buildings do 
+    resources :documents
+  end
   resources :users
 
   get '/session', to: 'sessions#new'
