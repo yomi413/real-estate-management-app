@@ -139,11 +139,12 @@ class NavBar extends Component {
       );
     } else if (url === "/login" || url === "/signup") {
       return <div className="navbar">{homeButton}</div>;
-    } else if (url === "/building") {
+    } else if ("/buildings/d+$/.test(url)") {
       return (
         <div className="navbar">
           {homeButton}
           {buildingsButton}
+          {logoutButton}
         </div>
       );
     }
