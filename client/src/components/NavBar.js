@@ -81,7 +81,22 @@ class NavBar extends Component {
             <Nav className="mr-auto">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/building/new">New Building</Nav.Link>
-              <Nav.Link href="/buildings">All Buildings</Nav.Link>
+              <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
+    } else if (url === "/logout") {
+      return (
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real Estate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/building/new">New Building</Nav.Link>
+              <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
               <Nav.Link href="/logout">Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>
