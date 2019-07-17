@@ -1,201 +1,94 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-
-const link = {
-  width: "100px",
-  padding: "10px",
-  margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
-  border: "1px solid #4CAF50"
-};
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 class NavBar extends Component {
   render() {
-    const homeButton = (
-      <NavLink
-        to="/"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Home
-      </NavLink>
-    );
-
-    const loginButton = (
-      <NavLink
-        to="/login"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Login
-      </NavLink>
-    );
-
-    const signupButton = (
-      <NavLink
-        to="/signup"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Sign Up
-      </NavLink>
-    );
-
-    const logoutButton = (
-      <NavLink
-        to="/logout"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Logout
-      </NavLink>
-    );
-
-    const buildingsButton = (
-      <NavLink
-        to="/buildings"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Existing Buildings
-      </NavLink>
-    );
-
-    const buildingButton = (
-      <NavLink
-        to="/building"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        Building Info
-      </NavLink>
-    );
-
-    const newBuildingButton = (
-      <NavLink
-        to="/building/new"
-        exact
-        style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}
-      >
-        New Building
-      </NavLink>
-    );
-
     const url = window.location.pathname;
-
     if (url === "/") {
       return (
-        <div className="navbar">
-          {loginButton}
-          {signupButton}
-        </div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
+    } else if (url === "/login") {
+      return (
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
+    } else if (url === "/signup") {
+      return (
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real Estate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       );
     } else if (url === "/user-welcome") {
       return (
-        <div className="navbar">
-          {buildingsButton}
-          {newBuildingButton}
-          {logoutButton}
-        </div>
-      );
-    } else if (url === "/buildings") {
-      return (
-        <div className="navbar">
-          {homeButton}
-          {newBuildingButton}
-          {logoutButton}
-          {buildingButton}
-        </div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real Estate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/building/new">New Building</Nav.Link>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       );
     } else if (url === "/building/new") {
       return (
-        <div className="navbar">
-          {homeButton}
-          {buildingsButton}
-        </div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real Estate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/buildings">All Buildings</Nav.Link>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       );
-    } else if (url === "/login" || url === "/signup") {
-      return <div className="navbar">{homeButton}</div>;
     } else if ("/buildings/d+$/.test(url)") {
       return (
-        <div className="navbar">
-          {homeButton}
-          {buildingsButton}
-          {logoutButton}
-        </div>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Escano/Asis Real Estate</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/building/new">New Building</Nav.Link>
+              <Nav.Link href="/buildings">All Buildings</Nav.Link>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       );
     }
   }
 }
-
-// const NavBar = () => {
-//   return (
-//     <div className="navbar">
-//       <NavLink
-//         to="/"
-//         exact
-//         style={link}
-//         activeStyle={{
-//           background: 'darkblue'
-//         }}
-//         >Home</NavLink>
-// <NavLink
-//   to="/login"
-//   exact
-//   style={link}
-//   activeStyle={{
-//     background: 'darkblue'
-//   }}
-//   >Login</NavLink>
-// <NavLink
-//   to="/signup"
-//   exact
-//   style={link}
-//   activeStyle={{
-//     background: 'darkblue'
-//   }}
-//   >Sign Up</NavLink>
-//       <NavLink
-//         to="/building"
-//         exact
-//         style={link}
-//         activeStyle={{
-//           background: 'darkblue'
-//         }}
-//         >Building Info</NavLink>
-//   <NavLink
-//     to="/logout"
-//     exact
-//     style={link}
-//     activeStyle={{
-//       background: 'darkblue'
-//     }}
-//     >Logout</NavLink>
-// </div>
-//   )
-// }
 
 export default NavBar;
