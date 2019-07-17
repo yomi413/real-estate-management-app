@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { connect } from 'react-redux';
 import { Link, withRouter } from "react-router-dom";
+import NavBar from "./components/NavBar";
 
 class Logout extends Component {
   handleLogout = () => {
@@ -29,6 +30,7 @@ class Logout extends Component {
   render() {
     return (
       <div>
+        <NavBar />
         <h3>Are you sure you want to log out?</h3>
         <button type="button" onClick={this.handleLogout}>
           Logout Button
