@@ -5,20 +5,20 @@ const AccountForm = props => (
   <div>
     <NavBar />
     <div style={{ color: "red" }}>{props.error}</div>
+
     <form onSubmit={props.onSubmit}>
-      <h1>{props.heading}</h1>
-      <div>
-        <label htmlFor="email">Email: </label>
+      <h1 className="credential-heading">{props.heading}</h1>
+      <div className="form-group">
+        <label htmlFor="exampleInputEmail1">Email address</label>
         <input
           type="text"
           name="email"
-          placeholder="Email"
+          placeholder="Enter email"
           onChange={props.onChange}
         />
       </div>
-      <br />
-      <div>
-        <label htmlFor="password">Password: </label>
+      <div className="form-group">
+        <label for="exampleInputPassword1">Password</label>
         <input
           type="password"
           name="password"
@@ -26,8 +26,10 @@ const AccountForm = props => (
           onChange={props.onChange}
         />
       </div>
-      <br />
-      <input type="submit" value="Submit" />
+
+      <button type="submit" className="btn btn-primary">
+        Submit
+      </button>
     </form>
   </div>
 );
