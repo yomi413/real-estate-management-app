@@ -90,7 +90,7 @@ iframe {
   width: 100%;
   height: 225;
   border: 50px;
-  scroll: "no";
+  cursor: "no";
   margin: 0;
 }
 
