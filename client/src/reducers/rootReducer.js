@@ -5,8 +5,10 @@ const rootReducer = (state, action) => {
         ...state,
         buildings: action.buildings
       };
+
+    default:
+      return state;
   }
-  return state;
 };
 
 export default rootReducer;
