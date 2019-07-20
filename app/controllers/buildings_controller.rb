@@ -35,6 +35,7 @@ class BuildingsController < ApplicationController
     params.permit(
       :address, 
       :description, 
+      :image,
       :numberOfApartments, 
       document_attributes: [
         :deed, 
@@ -43,6 +44,7 @@ class BuildingsController < ApplicationController
         :satisfaction_of_mortgage_1, 
         :satisfaction_of_mortgage_2, 
         :certificate_of_occupancy
-      ])
+      ]
+    )
   end
 end
