@@ -12,16 +12,12 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-// import NavBar from './components/NavBar';
-import Welcome from "./Welcome";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import UserWelcome from "./UserWelcome";
-import Logout from "./Logout";
-import Building from "./components/Building";
-import Buildings from "./components/Buildings";
-import BuildingDocuments from "./BuildingDocuments";
-import TenantsList from "./TenantsList";
+import Welcome from "./components/Welcome";
+import Login from "./containers/Login";
+import SignUp from "./containers/SignUp";
+import UserWelcome from "./components/UserWelcome";
+import Logout from "./containers/Logout";
+import Building from "./containers/Building";
 import BuildingContainer from "./containers/BuildingContainer";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -40,12 +36,6 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk))
 );
 
-// createStore(
-//   reducer,
-//   initialState,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
-
 ReactDOM.render(
   <Provider store={store}>
     <Router>
@@ -55,10 +45,6 @@ ReactDOM.render(
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/user-welcome" component={UserWelcome} />
         <Route exact path="/logout" component={Logout} />
-        <Route exact path="/building" component={Building} />
-        <Route exact path="/documents" component={BuildingDocuments} />
-        <Route exact path="/tenants" component={TenantsList} />
-        <Route exact path="/buildings" component={Buildings} />
         <Route exact path="/building/new" component={BuildingContainer} />
 
         <Route
@@ -73,11 +59,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById('root')
-// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
