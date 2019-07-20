@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 
 const fetchBuildings = () => {
@@ -18,10 +17,6 @@ const fetchBuildings = () => {
 };
 
 class Buildings extends Component {
-  state = {
-    buildings: []
-  };
-
   componentDidMount() {
     this.props.fetchBuildings();
   }
@@ -30,14 +25,13 @@ class Buildings extends Component {
     const buildingsList = this.props.buildings.map((building, index) => {
       return (
         <li key={index}>
-          <a href={`building/${building.id}`}>{building.address}</a>
+          <Link to={`building/${building.id}`}>{building.address}</Link>
         </li>
       );
     });
 
     return (
       <div>
-        <h1>Buildings</h1>
         <ul>{buildingsList}</ul>
       </div>
     );
