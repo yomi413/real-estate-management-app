@@ -3,22 +3,15 @@ require 'pry'
 class DocumentsController < ApplicationController
     def index
         building = Building.find_by(id: params[:building_id])
-        # binding.pry
         document = building.document
         render json: {document: document}
     end
 
     def create
         building = Building.find_by(id: params[:building_id])
-        document = building.documents.new(document_params)
+        document = building.documents.create(document_params)
 
-        if document.save
-            render json: {success: true}, status: 201
-          else
-            render json: {errors: "Document does not exist. Please try again."}, status: 422
-          end
-
-        render json: {success: true}, status: 201 
+        render json: {document: document}
     end
 
     private
