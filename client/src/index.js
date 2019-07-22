@@ -5,20 +5,15 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers/rootReducer";
 import { Provider } from "react-redux";
 import "./index.css";
-// import App from './App';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Login from "./containers/Login";
 import SignUp from "./containers/SignUp";
 import UserWelcome from "./components/UserWelcome";
 import Logout from "./containers/Logout";
 import Building from "./containers/Building";
-import BuildingContainer from "./containers/BuildingContainer";
+import CreateBuilding from "./containers/CreateBuilding";
+import EditBuilding from "./components/EditBuilding";
 
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -45,7 +40,20 @@ ReactDOM.render(
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/user-welcome" component={UserWelcome} />
         <Route exact path="/logout" component={Logout} />
-        <Route exact path="/building/new" component={BuildingContainer} />
+        <Route exact path="/building/new" component={CreateBuilding} />
+        <Route
+          exact
+          path="/building/:id/edit"
+          render={props => {
+            console.log(props);
+            return (
+              <EditBuilding
+                buildingId={props.match.params.id}
+                history={props.history}
+              />
+            );
+          }}
+        />
 
         <Route
           exact
