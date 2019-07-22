@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import FooterComponent from "../components/FooterComponent";
 
 class Logout extends Component {
   handleLogout = () => {
@@ -42,9 +42,10 @@ class Logout extends Component {
         >
           Logout
         </button>
+        <FooterComponent />
       </div>
     );
   }
 }
 
-export default withRouter(Logout);
+export default Logout;
