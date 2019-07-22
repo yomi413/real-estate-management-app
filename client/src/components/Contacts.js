@@ -23,9 +23,7 @@ const Contacts = () => (
       </li>
 
       <li>
-        <a href="https://www.zillow.com/homes/2942-Baisley-Avenue,-Bronx,-NY-10461_rb/83178696_zpid/">
-          Zillow
-        </a>
+        <a href="https://www.zillow.com">Zillow</a>
       </li>
     </ul>
   </div>
