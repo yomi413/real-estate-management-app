@@ -7,7 +7,6 @@ export const fetchBuilding = buildingId => {
     )
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         dispatch({ type: "ADD_BUILDINGS", buildings: [data.building] });
         return data.building;
       });
