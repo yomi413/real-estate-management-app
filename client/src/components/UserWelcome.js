@@ -1,20 +1,18 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Buildings from "../containers/Buildings";
 import NavBar from "./NavBar";
 import FooterComponent from "./FooterComponent";
+import UserProfile from "./UserProfile";
 
 const UserWelcome = props => (
-  <React.Fragment>
-    <div>
-      <NavBar />
-      <h1>Welcome !</h1>
-      <p>Your buildings.</p>
+  <div>
+    <NavBar />
+    <h1>Welcome!</h1>
+    <p>Your detailed list of buildings is found below.</p>
 
-      <Buildings />
-      <FooterComponent />
-    </div>
-  </React.Fragment>
+    <Buildings />
+    <FooterComponent />
+  </div>
 );
 
 export default UserWelcome;
