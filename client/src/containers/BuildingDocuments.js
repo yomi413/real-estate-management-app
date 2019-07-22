@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "../App";
-import BuildingContainer from "./BuildingContainer";
+// import CreateBuilding from "./CreateBuilding";
 
 class BuildingDocuments extends Component {
   state = {
