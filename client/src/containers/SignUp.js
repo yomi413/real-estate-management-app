@@ -58,7 +58,6 @@ class SignUp extends Component {
           <UserProfile
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
-            firstName={this.state.first_name}
           />
           <br />
           <AccountForm
