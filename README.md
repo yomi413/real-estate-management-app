@@ -1,6 +1,6 @@
 # REACT/REDUX FINAL PROJECT
 
-## Real Estate Organizational Application
+## Real Estate Application
 
 Welcome to my final React/Redux Project! This application endeavors to provide users with a way of organizing their real estate investments. The purpose is to have a place for easy access of documents, as well as listing of important contacts and links. Future versions may provide a way to receive rents from tenants, as well as making payments to banks and other agencies as they pertain to each property.
 
@@ -20,12 +20,12 @@ To use this application the way that it was intended please follow the following
 1. Open this repository https://github.com/yomi413/final-react-redux-portfolio-project.git;
 2. Clone or download the repository, and save it locally;
 3. In the terminal, activate the API server by running the following commands;
-   a. Run `bundle install`;
-   b. Run `rake db:migrate`; and
-   c. Run `rails s -p 3001` to start the API server.
+   (a) Run `bundle install`;
+   (b) Run `rake db:migrate`; and
+   (c) Run `rails s -p 3001` to start the API server.
 4. In a new terminal window or tab run the following commands to activate the UI (user interface);
-   a. Run `npm install`; and
-   b. Run `npm start` (this command will automatically open `http://localhost:3000` in the browser).
+   (a) Run `npm install`; and
+   (b) Run `npm start` (this command will automatically open `http://localhost:3000` in the browser).
 
 ## Contributing
 
