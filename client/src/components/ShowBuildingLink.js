@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteBuilding } from "../actions";
-import Table from "react-bootstrap/Table";
 
 class ShowBuildingLink extends Component {
   render() {

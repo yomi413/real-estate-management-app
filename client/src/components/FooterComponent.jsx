@@ -26,6 +26,7 @@ class FooterComponent extends Component {
                   scrolling="no"
                   marginHeight="0"
                   marginWidth="0"
+                  title="Map"
                 />
               </div>
             </div>

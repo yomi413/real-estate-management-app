@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import NavBar from "./NavBar";
 import FooterComponent from "./FooterComponent";
 
@@ -14,7 +14,11 @@ const Welcome = () => (
           This site will help keep us organized and ready to tackle the needs of
           our properties.
         </h5>
-        <img className="skyscrapers" src={"https://i.imgur.com/lpvbSRT.jpg"} />
+        <img
+          className="skyscrapers"
+          src={"https://i.imgur.com/lpvbSRT.jpg"}
+          alt=""
+        />
       </center>
     </div>
     <FooterComponent />

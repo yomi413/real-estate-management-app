@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Buildings from "../containers/Buildings";
 import NavBar from "./NavBar";
 import FooterComponent from "./FooterComponent";
-import UserProfile from "./UserProfile";
 
 const UserWelcome = props => (
   <div>
