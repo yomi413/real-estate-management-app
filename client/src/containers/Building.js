@@ -1,27 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import BuildingContainer from "./BuildingContainer";
-import buildingInfo from "../data";
 import NavBar from "../components/NavBar";
 import BuildingDocuments from "./BuildingDocuments";
 import Contacts from "../components/Contacts";
 import FooterComponent from "../components/FooterComponent";
 import BuildingFactsComponent from "../components/BuildingFactsComponent";
-
-const fetchBuilding = buildingId => {
-  return dispatch => {
-    fetch(
-      `http://localhost:3001/buildings/${buildingId}.json?uid=${
-        localStorage["json.sessionUid"]
-      }`
-    )
-      .then(response => response.json())
-      .then(data => {
-        dispatch({ type: "ADD_BUILDINGS", buildings: [data.building] });
-      });
-  };
-};
+import { fetchBuilding } from "../actions";
 
 class Building extends Component {
   componentDidMount() {
