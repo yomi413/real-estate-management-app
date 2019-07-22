@@ -24,8 +24,11 @@ To use this application the way that it was intended please follow the following
    (b) Run `rake db:migrate`; and
    (c) Run `rails s -p 3001` to start the API server.
 4. In a new terminal window or tab run the following commands to activate the UI (user interface);
-   (a) Run `npm install`; and
-   (b) Run `npm start` (this command will automatically open `http://localhost:3000` in the browser).
+   (a) Run `npm install`;
+   (b) Run `npm start` (this command will automatically open `http://localhost:3000` in the browser);
+   (c) Create an account by going to the Sign Up page;
+   (d) Once signed in, add a new building (Note: The only required fields are the address, description and number of apartments. The image and documents are currently optional and can be uploaded at a later date.); and
+   (e) Look around, test things out, and enjoy the experience.
 
 ## Contributing
 
