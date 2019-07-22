@@ -1,6 +1,6 @@
 class Building < ApplicationRecord
   belongs_to :user
-  has_one :document
+  has_one :document, :dependent => :destroy
 
   validates :address, presence: true
   validates :description, presence: true
