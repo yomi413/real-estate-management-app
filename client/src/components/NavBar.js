@@ -27,7 +27,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -41,7 +40,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -55,7 +53,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/building/new">New Building</Nav.Link>
                 <Nav.Link href="/logout">Logout</Nav.Link>
               </Nav>
@@ -70,7 +67,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
                 <Nav.Link href="/logout">Logout</Nav.Link>
               </Nav>
@@ -85,7 +81,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/building/new">New Building</Nav.Link>
                 <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
                 <Nav.Link href="/logout">Logout</Nav.Link>
@@ -101,7 +96,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/building/new">New Building</Nav.Link>
                 <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
                 <Nav.Link href="/logout">Logout</Nav.Link>
@@ -117,7 +111,6 @@ class NavBar extends Component {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/building/new">New Building</Nav.Link>
                 <Nav.Link href="/user-welcome">All Buildings</Nav.Link>
                 <Nav.Link href="/logout">Logout</Nav.Link>
