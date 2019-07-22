@@ -1,20 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-
-const fetchBuildings = () => {
-  return dispatch => {
-    fetch(
-      `http://localhost:3001/buildings.json?uid=${
-        localStorage["json.sessionUid"]
-      }`
-    )
-      .then(response => response.json())
-      .then(data => {
-        dispatch({ type: "ADD_BUILDINGS", buildings: data.buildings });
-      });
-  };
-};
+import ShowBuildingLink from "../components/ShowBuildingLink";
+import Table from "react-bootstrap/Table";
+import { fetchBuildings } from "../actions";
 
 class Buildings extends Component {
   componentDidMount() {
@@ -22,18 +10,16 @@ class Buildings extends Component {
   }
 
   render() {
-    const buildingsList = this.props.buildings.map((building, index) => {
-      return (
-        <li key={index}>
-          <Link to={`building/${building.id}`}>{building.address}</Link>
-        </li>
-      );
-    });
+    const buildingsList = this.props.buildings.map(building => (
+      <ShowBuildingLink key={building.id} building={building} />
+    ));
 
     return (
-      <div>
-        <ul>{buildingsList}</ul>
-      </div>
+      <Table>
+        <tbody>
+          <tr>{buildingsList}</tr>
+        </tbody>
+      </Table>
     );
   }
 }
