@@ -16,9 +16,14 @@ class Buildings extends Component {
 
     return (
       <Table>
-        <tbody>
-          <tr>{buildingsList}</tr>
-        </tbody>
+        <thead>
+          <tr>
+            <th>Building</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        {buildingsList}
       </Table>
     );
   }
