@@ -19,7 +19,7 @@ To use this application the way that it was intended please follow the following
 
 1. Open this repository https://github.com/yomi413/final-react-redux-portfolio-project.git;
 2. Clone or download the repository, and save it locally;
-3. Activate the API server by running the following commands;
+3. In the terminal, activate the API server by running the following commands;
    a. Run `bundle install`;
    b. Run `rake db:migrate`; and
    c. Run `rails s -p 3001` to start the API server.
@@ -31,9 +31,7 @@ To use this application the way that it was intended please follow the following
 
 Bug reports and pull request are welcome on GitHub at https://github.com/yomi413/final-react-redux-portfolio-project.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-## License
-
-#The MIT License (MIT)
+## License - The MIT License (MIT)
 
 Copyright (c) 2019 yomi413
 
