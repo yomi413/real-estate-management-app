@@ -19,6 +19,7 @@ class CreateBuilding extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    // console.log('A')
     fetch("http://localhost:3001/buildings", {
       method: "POST",
       headers: {
@@ -41,8 +42,10 @@ class CreateBuilding extends Component {
         }
       })
     }).then(() => {
+      // console.log('C')
       this.props.history.push("/user-welcome");
     });
+    // console.log('B')
   };
 
   handleChange = event => {
