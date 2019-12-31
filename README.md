@@ -13,11 +13,7 @@ Users will be able to take the following actions:
 5. Update information for each building/property in order to correct or modify the building's records; and
 6. Delete individual building entries.
 
-## Using the Application
-
-You can visit [] to interact with this application in real time. You can click around, but access to most of the information is limited to a very limited group of people that have been approved by the administrator.
-
-## Running the Program from GitHub
+## Running the Program
 
 To use this application the way that it was intended, please follow the following instructions:
 
