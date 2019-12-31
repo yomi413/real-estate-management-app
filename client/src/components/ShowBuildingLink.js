@@ -4,17 +4,6 @@ import { connect } from "react-redux";
 import { deleteBuilding } from "../actions";
 
 class ShowBuildingLink extends Component {
-  state = {
-    count: 0
-  };
-
-  handleCount = event => {
-    event.preventDefault();
-    this.setState({
-      count: this.state.count + 1
-    });
-  };
-
   render() {
     const { building } = this.props;
 
@@ -23,8 +12,6 @@ class ShowBuildingLink extends Component {
         <tr>
           <td>
             <Link to={`building/${building.id}`}>{building.address}</Link>
-            {/* <button onClick={this.handleCount}>Up Vote</button>
-            {this.state.count} */}
           </td>
 
           <td>
