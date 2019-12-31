@@ -10,9 +10,9 @@ const Welcome = () => (
         <h1 className="homeHeader">Escano/Asis Real Estate</h1>
         <h5>
           Escano/Asis Real Estate is a site designed and developed with the
-          intention of providing a one-stop-shop for our group's real estate.
-          This site will help keep us organized and ready to tackle the needs of
-          our properties.
+          intention of providing a one-stop-shop for our group's basic real
+          estate information. This site will help keep us organized and ready to
+          tackle the needs of our property.
         </h5>
         <img
           className="skyscrapers"
