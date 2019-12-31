@@ -15,7 +15,7 @@ Users will be able to take the following actions:
 
 ## Using the Application
 
-You can visit [https://yescano.com/real-estate-management-app/] to interact with this application in real time. You can click around, but access to most of the information is limited to a very limited group of people that have been approved by the administrator.
+You can visit [] to interact with this application in real time. You can click around, but access to most of the information is limited to a very limited group of people that have been approved by the administrator.
 
 ## Running the Program from GitHub
 
@@ -34,9 +34,9 @@ To use this application the way that it was intended, please follow the followin
       2. Once in the `client` folder, run `npm install`; and
       3. Run `npm start` (this command will automatically open `http://localhost:3000` in the browser).
    3. In the browser, you will see the welcome page. Feel free to login as a Guest with the following information:
-      Email: guest@abc.com
-      Password: password
-      Once logged in, you will see one building already added. Look around, test things out, and enjoy the experience.
+      `Email: guest@abc.com`
+      `Password: password`
+      1. Once logged in, you will see one building already added. Look around, test things out, and enjoy the experience.
 
 ## Contributing
 
